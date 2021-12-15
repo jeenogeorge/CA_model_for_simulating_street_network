@@ -1,0 +1,14 @@
+A binary C.A. model for simulating the street network was developed in R using SIMLANDER as a guide. The SIMLANDER model simulates a single land use at a time, which is suited to the objective. The SIMLANDER code estimates a "transition state" for each step to determine specific land usage needs. We vary the transition states in our CA model and compare the simulation results. 
+The first transition state simulates the street network using neighbourhood rules represented by np and rd, and randomness represented by rp, presuming that the natural terrain and streets are mutually exclusive. The second transition state models the street network as a function of terrain characteristics ,stream channels (str) and slope map (sm), along with neighbourhood rules and randomness, implying that the natural terrain and street network interfere.
+For each time step, the transition rule of 'TR_1' is:
+TR_1=[∏(NP,RP,RD)]
+For each time step, the transition rule of 'TR_2' is:
+TR_2= [∏(NP,RP,RD, 𝐒𝐌,𝐒𝐓𝐑)]
+The stream channel map ('STR'), the distance from the road network map ('R.D.'), and the slope map ('S.M.') are constant initial conditions. At the end of each time step, the model recalculates the neighbourhood transformation potential map ('N.P.') and the randomness factor ('R.P.'). 
+
+For each city, the C.A. model is run once for 'T.R. 1' and 12 times for 'T.R. 2', as seen in Table blelo, 4 times each for different conditions of stream channels. B-both ridge and drainage, R-representing only ridges, D-representing only drainage channels.
+B-1: Higher and lower orders of 'complete' stream channel along with the neighbourhood	R-1: Higher and lower orders of Ridge channel along with the neighbourhood	D-1: Higher and lower orders of Drainage channel along with the neighbourhood
+B-2: Higher orders of the 'complete' stream channels	R-2: Higher orders of the Ridge channels	D-2: Higher orders of the Drainage channels
+B-3: Higher and lower orders of 'complete' stream channel	R-3: Higher and lower orders of Ridge channel	D-3: Higher and lower orders of the Drainage channel
+B-4: Higher orders of the 'complete' stream channels along with the neighbourhood	R-4: Higher orders of the Ridge channels along with the neighbourhood	D-4: Higher orders of the Drainage channel along with the neighbourhood
+
