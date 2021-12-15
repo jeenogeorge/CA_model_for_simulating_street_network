@@ -415,7 +415,7 @@ confusionMatrix(data = factor(dif_sim), reference = factor(dif_rd), positive = "
 #the results show poor similarity between the simulated map and the map at the 'end' time. This is expected as 
 #streets can intersect the territory's structuring lines at various angles rather than simply following them, 
 #as simulated by the C.A. model. As a result, the resemblance of the map showing the neighbourhood of the 
-#'original change map' to the 'simulated change map' is determined. 
+#'original change map (diff_rd)' to the 'simulated change map (dif_sim)' is determined. 
 
 #creating a fuzzy change map for the change map of the simulated
 w2 <- matrix(c(0,0,50,0,0,0,50,50,50,0,50,50,500,50,50,0,50,50,50,0,0,0,50,0,0), nr = 5, nc = 5)
