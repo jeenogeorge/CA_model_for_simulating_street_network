@@ -84,7 +84,7 @@ shapefile(strm_rd_B, outfile, overwrite = TRUE)
 outfile <- sprintf('xxx/%s/strm_r_B.shp',city_name)
 shapefile(strm_1_B, outfile, overwrite = TRUE)
 #reading rasterised streams
-#all stream orders
+#higher and lower stream orders
 strm_alt <- raster(sprintf("xxx/%s/rasterised/strm_alt_B.grd",city_name)) 
 plot(strm_alt)
 res(strm_alt)
@@ -142,9 +142,11 @@ ch1_2 <- rd_2-rd_1
 ch1_2
 #---------------------
 #set weights for the neighbourhood
-
 w <- matrix(c(0,3,0,3,9,3,0,3,0), nr = 3, nc = 3)
+#getting the neighbourhood of the stream channels
+#higher and lower orders
 strm_r_alt_n <- focal(strm_alt, w)
+#only higher orders
 strm_r_n <- focal(strm_r, w)
 #w <- matrix(c(3,9,3), nr = 1, nc = 3)
 w<-w/100
